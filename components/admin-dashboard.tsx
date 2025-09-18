@@ -103,7 +103,7 @@ export function AdminDashboard() {
 
     const filteredRuns = runs.filter(
         (run) =>
-            run.phone_number?.includes(searchTerm) ||
+            // run.id?.includes(searchTerm) ||
             run.platform?.toLowerCase().includes(searchTerm.toLowerCase()) ||
             run.url?.includes(searchTerm) ||
             run.status?.includes(searchTerm),
@@ -276,7 +276,7 @@ export function AdminDashboard() {
                                                 filteredRuns.map((run) => (
                                                     <TableRow key={run.id}>
                                                         <TableCell className="font-mono text-sm">{run.id}</TableCell>
-                                                        <TableCell className="font-mono">{run.phone_number}</TableCell>
+                                                        <TableCell className="font-mono">{run.sender?.name ?? run.sender?.id}</TableCell>
                                                         <TableCell>
                                                             <Badge variant="outline">{run.platform}</Badge>
                                                         </TableCell>
@@ -306,7 +306,7 @@ export function AdminDashboard() {
                                                                         <div className="grid grid-cols-2 gap-4 py-4">
                                                                             <div>
                                                                                 <Label className="text-sm font-medium">Phone Number</Label>
-                                                                                <p className="text-sm text-muted-foreground font-mono">{run.phone_number}</p>
+                                                                                <p className="text-sm text-muted-foreground font-mono">{run.id}</p>
                                                                             </div>
                                                                             <div>
                                                                                 <Label className="text-sm font-medium">Platform</Label>
