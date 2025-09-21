@@ -276,7 +276,7 @@ export function AdminDashboard() {
                                                 filteredRuns.map((run) => (
                                                     <TableRow key={run.id}>
                                                         <TableCell className="font-mono text-sm">{run.id}</TableCell>
-                                                        <TableCell className="font-mono">{run.sender?.id} • {run.sender?.name } </TableCell>
+                                                        <TableCell className="font-mono">{run.sender?.id} • {run.sender?.name} </TableCell>
                                                         <TableCell>
                                                             <Badge variant="outline">{run.platform}</Badge>
                                                         </TableCell>
@@ -315,6 +315,19 @@ export function AdminDashboard() {
                                                                             <div className="col-span-2">
                                                                                 <Label className="text-sm font-medium">URL</Label>
                                                                                 <p className="text-sm text-muted-foreground break-all">{run.url}</p>
+                                                                                {run.url && (
+                                                                                    <a
+                                                                                        href={run.url}
+                                                                                        target="_blank"
+                                                                                        rel="noopener noreferrer"
+                                                                                        className="inline-block mt-2"
+                                                                                    >
+                                                                                        <Button variant="secondary" size="sm">
+                                                                                            Open Link
+                                                                                        </Button>
+                                                                                    </a>
+                                                                                )}
+
                                                                             </div>
                                                                             <div>
                                                                                 <Label className="text-sm font-medium">Status</Label>
