@@ -276,7 +276,7 @@ export function AdminDashboard() {
                                                 filteredRuns.map((run) => (
                                                     <TableRow key={run.id}>
                                                         <TableCell className="font-mono text-sm">{run.id}</TableCell>
-                                                        <TableCell className="font-mono">{run.sender?.name ?? run.sender?.id}</TableCell>
+                                                        <TableCell className="font-mono">{run.sender?.id} • {run.sender?.name } </TableCell>
                                                         <TableCell>
                                                             <Badge variant="outline">{run.platform}</Badge>
                                                         </TableCell>
